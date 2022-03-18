@@ -30,7 +30,7 @@ function send()
 
         var send_signed = new XMLHttpRequest();
     
-        send_signed.open( "POST", 'http://127.0.0.1:8000/cars/test'+formatParams( params ), false); // false for synchronous request // + formatParams( params )
+        send_signed.open( "POST", 'https://cars-nft.herokuapp.com/cars/test'+formatParams( params ), false); // false for synchronous request // + formatParams( params )
         send_signed.setRequestHeader("X-CSRFToken", getCookie("csrftoken")); 
         send_signed.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
         send_signed.addEventListener("load", () => {
