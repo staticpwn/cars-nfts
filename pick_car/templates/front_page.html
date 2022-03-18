@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick a car!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/front_page.css' %}">
+</head>
+<body>
+   {{ user_name }}
+    <div class="container">
+        <div class="images">
+            <img src="{% static 'car_parts/' %}{{images.0}}">
+            <img src="{% static 'car_parts/' %}{{images.1}}">
+            <img src="{% static 'car_parts/' %}{{images.2}}">
+            <img src="{% static 'car_parts/' %}{{images.3}}">
+            <img src="{% static 'car_parts/' %}{{images.4}}">
+            <img src="{% static 'car_parts/' %}{{images.5}}">
+
+        </div>
+        <div class="buttons">
+            <form class="buttons-form" action="" method="post">
+            {% csrf_token %}
+            
+            {% if not next_roll_date %}
+            <input id="roller" type="submit" value="Roll" name="button">
+            {% else %}
+            <p>your will be able to roll again after:<br>{{ next_roll_date }} UTC</p>
+            {% endif %}
+            <input type="submit" value="Mint" name="button" onclick="send('fffff')">
+            
+
+            </form>
+        </div>
+    </div>
+
+    {% if message %} <span ><strong style="color: red;">{{ message }}</strong></span> {% endif %}
+    <script src="{% static 'scripts/test.js' %}"></script>
+
+    <script>
+        var token = '{% csrf_token %}'
+    </script>
+</body>
+</html>

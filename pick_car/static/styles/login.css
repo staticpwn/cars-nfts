@@ -1,0 +1,21 @@
+*{
+    background-color: rgb(13, 13, 14);
+    color: white;
+}
+
+#connect_mm{
+    /* border: solid 1px red; */
+    width: auto;
+    position: absolute;
+    /* top: 5%; */
+    left: 90%;
+    justify-content: center;
+    
+}
+
+#connect_button:hover{
+    cursor: pointer;
+    background: white;
+    color: black;
+    /* opacity: 0.5; */
+}
