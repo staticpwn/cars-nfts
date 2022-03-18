@@ -17,7 +17,7 @@ function send()
 
       var get_hash = new XMLHttpRequest();
 
-      get_hash.open("GET", 'http://127.0.0.1:8000/cars/test')
+      get_hash.open("GET", 'https://cars-nft.herokuapp.com/cars/test')
       get_hash.addEventListener("load", () =>
       {
         hash = get_hash.responseText
